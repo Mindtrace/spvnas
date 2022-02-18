@@ -3,7 +3,7 @@ import torchsparse.nn as spnn
 from torch import nn
 from torchsparse import PointTensor
 
-from core.models.utils import initial_voxelize, point_to_voxel, voxel_to_point
+from spvnas.models.utils import initial_voxelize, point_to_voxel, voxel_to_point
 
 __all__ = ['SPVCNN']
 

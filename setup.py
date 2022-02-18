@@ -10,10 +10,8 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-# exec(open('effdet/version.py').read())
 setup(
     name='spvnas',
-    # version=__version__,
     description='SPVNAS for PyTorch',
 
     keywords='pytorch pretrained efficientdet efficientnet bifpn object detection',

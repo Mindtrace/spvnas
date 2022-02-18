@@ -13,9 +13,9 @@ from torchpack.utils.config import configs
 from torchpack.utils.logging import logger
 from tqdm import tqdm
 
-from core import builder
-from core.callbacks import MeanIoU
-from core.trainers import SemanticKITTITrainer
+from spvnas import builder
+from spvnas.callbacks import MeanIoU
+from spvnas.trainers import SemanticKITTITrainer
 from model_zoo import minkunet, spvcnn, spvnas_specialized
 
 

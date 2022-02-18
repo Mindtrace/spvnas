@@ -6,9 +6,9 @@ from urllib.request import urlretrieve
 import torch
 from torchpack import distributed as dist
 
-from core.models.semantic_kitti.minkunet import MinkUNet
-from core.models.semantic_kitti.spvcnn import SPVCNN
-from core.models.semantic_kitti.spvnas import SPVNAS
+from spvnas.models.semantic_kitti.minkunet import MinkUNet
+from spvnas.models.semantic_kitti.spvcnn import SPVCNN
+from spvnas.models.semantic_kitti.spvnas import SPVNAS
 
 __all__ = ['spvnas_specialized', 'minkunet', 'spvcnn']
 

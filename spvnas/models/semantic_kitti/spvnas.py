@@ -8,13 +8,13 @@ import torchsparse
 import torchsparse.nn as spnn
 from torchsparse import PointTensor, SparseTensor
 
-from core.models.utils import point_to_voxel, voxel_to_point
-from core.modules.layers import (DynamicConvolutionBlock,
+from spvnas.models.utils import point_to_voxel, voxel_to_point
+from spvnas.modules.layers import (DynamicConvolutionBlock,
                                  DynamicDeconvolutionBlock, DynamicLinear,
                                  DynamicLinearBlock, DynamicResidualBlock,
                                  make_divisible)
-from core.modules.modules import RandomDepth, RandomModule
-from core.modules.networks import RandomNet
+from spvnas.modules.modules import RandomDepth, RandomModule
+from spvnas.modules.networks import RandomNet
 
 __all__ = ['SPVNAS']
 

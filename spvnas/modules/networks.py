@@ -4,7 +4,7 @@ from collections import deque
 
 import torch.nn as nn
 
-from core.modules.modules import RandomModule
+from spvnas.modules.modules import RandomModule
 
 __all__ = ['RandomNet']
 

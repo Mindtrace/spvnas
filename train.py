@@ -14,9 +14,9 @@ from torchpack.environ import auto_set_run_dir, set_run_dir
 from torchpack.utils.config import configs
 from torchpack.utils.logging import logger
 
-from core import builder
-from core.callbacks import MeanIoU
-from core.trainers import SemanticKITTITrainer
+from spvnas import builder
+from spvnas.callbacks import MeanIoU
+from spvnas.trainers import SemanticKITTITrainer
 
 
 def main() -> None:

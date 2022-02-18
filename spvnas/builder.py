@@ -14,7 +14,7 @@ __all__ = [
 
 def make_dataset() -> Dataset:
     if configs.dataset.name == 'semantic_kitti':
-        from core.datasets import SemanticKITTI
+        from spvnas.datasets import SemanticKITTI
         dataset = SemanticKITTI(root=configs.dataset.root,
                                 num_points=configs.dataset.num_points,
                                 voxel_size=configs.dataset.voxel_size)
@@ -25,14 +25,14 @@ def make_dataset() -> Dataset:
 
 def make_model() -> nn.Module:
     if configs.model.name == 'minkunet':
-        from core.models.semantic_kitti import MinkUNet
+        from spvnas.models.semantic_kitti import MinkUNet
         if 'cr' in configs.model:
             cr = configs.model.cr
         else:
             cr = 1.0
         model = MinkUNet(num_classes=configs.data.num_classes, cr=cr)
     elif configs.model.name == 'spvcnn':
-        from core.models.semantic_kitti import SPVCNN
+        from spvnas.models.semantic_kitti import SPVCNN
         if 'cr' in configs.model:
             cr = configs.model.cr
         else:
@@ -87,7 +87,7 @@ def make_scheduler(optimizer: Optimizer) -> Scheduler:
     elif configs.scheduler.name == 'cosine_warmup':
         from functools import partial
 
-        from core.schedulers import cosine_schedule_with_warmup
+        from spvnas.schedulers import cosine_schedule_with_warmup
         scheduler = torch.optim.lr_scheduler.LambdaLR(
             optimizer,
             lr_lambda=partial(cosine_schedule_with_warmup,

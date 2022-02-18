@@ -5,10 +5,10 @@ import torch
 import torch.nn as nn
 import torchsparse.nn as spnn
 
-from core.modules.dynamic_op import DynamicBatchNorm, DynamicLinear
-from core.modules.dynamic_sparseop import (SparseDynamicBatchNorm,
+from spvnas.modules.dynamic_op import DynamicBatchNorm, DynamicLinear
+from spvnas.modules.dynamic_sparseop import (SparseDynamicBatchNorm,
                                            SparseDynamicConv3d, make_divisible)
-from core.modules.modules import RandomDepth, RandomModule
+from spvnas.modules.modules import RandomDepth, RandomModule
 
 
 def adjust_bn_according_to_idx(bn, idx):
