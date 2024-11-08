@@ -2,6 +2,10 @@ import torch.nn as nn
 import torchsparse
 import torchsparse.nn as spnn
 
+from torchsparse import PointTensor
+
+from spvnas.models.utils import initial_voxelize
+
 __all__ = ['MinkUNet']
 
 
@@ -176,6 +180,11 @@ class MinkUNet(nn.Module):
                 nn.init.constant_(m.bias, 0)
 
     def forward(self, x):
+        # x: SparseTensor z: PointTensor
+        z = PointTensor(x.F, x.C.float())
+
+        x = initial_voxelize(z, self.pres, self.vres)
+
         x0 = self.stem(x)
         x1 = self.stage1(x0)
         x2 = self.stage2(x1)
